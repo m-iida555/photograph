@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "StaticPages", type: :feature do
-  describe "トップページ"  do
+  describe "トップページ" do
     background do
       visit root_path
     end
 
-    scenario "タイトルの文字が表示されているかどうか" do
+    scenario "SCENES撮影会の文字が表示されているかどうか" do
       expect(page).to have_content "SCENES撮影会"
     end
 
@@ -19,12 +19,12 @@ RSpec.feature "StaticPages", type: :feature do
     background do
       visit about_path
     end
-    
+
     scenario "ABOUT USの文字列が表示されているかどうか" do
       expect(page).to have_content "ABOUT US"
     end
 
-    scenario "タイトルの文字が表示されているかどうか" do
+    scenario "ABOUT USの文字が表示されているかどうか" do
       expect(page).to have_title full_title('ABOUT US')
     end
   end
@@ -38,7 +38,7 @@ RSpec.feature "StaticPages", type: :feature do
       expect(page).to have_content "利用規約"
     end
 
-    scenario "タイトルの文字が表示されているかどうか" do
+    scenario "利用規約の文字が表示されているかどうか" do
       expect(page).to have_title full_title('利用規約')
     end
   end
