@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     @users = User.find(params[:id])
   end
 
+  def edit
+    @background = User.update
+  end
+
   def signin
     
   end
