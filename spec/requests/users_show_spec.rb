@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "プロフィール", type: :request do
-  let(:user) { create(:user)}
+  let(:user) { create(:user) }
 
   before do
     get user_path(user.id)

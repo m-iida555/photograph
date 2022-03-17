@@ -24,10 +24,6 @@ class UsersController < ApplicationController
     @background = User.update
   end
 
-  def signin
-    
-  end
-
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end

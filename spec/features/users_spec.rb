@@ -12,7 +12,7 @@ RSpec.feature "Users", type: :feature do
       end
 
       scenario "正しいタイトルが表示されることを確認" do
-        expect(page).to have_title ('新規登録 - SCENES撮影会')
+        expect(page).to have_title "新規登録 - SCENES撮影会"
       end
     end
 
@@ -52,7 +52,6 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content user.name
       expect(page).to have_content user.email
       expect(page).to have_content user.id
-
     end
   end
 end

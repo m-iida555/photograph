@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   let!(:user) { create(:user) }
-                                    
+
   context "バリデーション" do
     it "名前、メールアドレスがあれば有効な状態であること" do
       expect(user).to be_valid
@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
 
     it "メールアドレスが200文字以内なら有効であること" do
       expect(user).to be_valid
-      user = build(:user, email: "a" * 200+"@gmail.com")
+      user = build(:user, email: "a" * 200 + "@gmail.com")
       expect(user).not_to be_valid
     end
 
@@ -42,10 +42,6 @@ RSpec.describe User, type: :model do
     it "パスワードがなければ無効な状態であること" do
       user = build(:user, password: nil)
       expect(user).not_to be_valid
-    end
-
-    it "パスワードが6文字以上であること" do
-      expect(user).to be_valid
     end
   end
 end
