@@ -79,11 +79,25 @@ footer {
   }
 }
 
+.header-positon{
+  position: relative;
+}
+
+.body-position{
+  position: absolute;
+  top: 150px;
+  width: 100%;
+}
+
 .header-wrapper {
   width: auto;
   height: 150px;
   background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
-  opacity: 0.7;
+}
+
+.body-wrapper{
+  width: 100%;
+  height: auto;
 }
 
 input, textarea, select, .uneditable-input {
@@ -109,4 +123,65 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.background-image{
+  width: 100%;
+  height: 500px;
+  margin-bottom: 100px;
+}
+
+.avatar-position{
+  text-align: center;
+  padding-top: 200px;
+}
+
+.title-position{
+  width: 100%;
+}
+
+.profile-bigtitle{
+  padding: 30px;
+  background: linear-gradient(-120deg, #E4A972, #9941D8) fixed;
+  border-radius: 20px;
+  width: 300px;
+  margin: 0 auto;
+  color: #fff;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.profile-wrapper{
+  width: auto;
+  height: auto;
+}
+
+table{
+  width: auto;
+  text-align: left;
+  margin-top: 250px;
+  margin-left: 100px;
+}
+
+.tbody{
+  text-align: left;
+}
+
+.profile-title{
+  display: inline-block;
+  font-family: serif;
+  font-color: #0000;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.profile-content{
+  display: inline-block;
+  font-family: serif;
+  font-color: #0000;
+  font-size: 40px;
+  margin-bottom: 22px;
+}
+
+tr{
 }
