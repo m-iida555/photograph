@@ -8,11 +8,15 @@
 
   <body>
     <div id="page">
-      <%= render 'layouts/header' %>
-      <% flash.each do |message_type, message| %>
+      <div class="header-position">
+        <%= render 'layouts/header' %>
+        <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-      <% end %>
-      <%= yield %>
+        <% end %>
+      </div>
+      <div class="body-position">
+        <%= yield %>
+      </div>
     </div>
     <%= render 'layouts/footer' %>
   </body>
