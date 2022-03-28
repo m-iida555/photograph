@@ -1,51 +1,52 @@
 <% provide(:title, "撮影者情報") %>
-<div class="body-wrapper">
-  <div class="content-wrapper">
-    <div class="background-image">
-      <div class="background-position">
-        <div class="avatar-position">
-          <%= gravatar_for @users %><br>
-        </div>
+<% flash.each do |message_type, message| %>
+  <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+<% end %>
+<div class="content-wrapper">
+  <div class="background-image">
+    <div class="background-position">
+      <div class="avatar-position">
+        <%= gravatar_for @users %><br>
       </div>
     </div>
-    <div class="divided-line"></div>
-      <div class="profile-wrapper">
-        <div class="title-position">
-          <h1 class="profile-bigtitle">撮影者様情報</h1>
-        </div>
-        <table>
-          <tbody>
-            <tr>
-              <th class="profile-title">お客様ID</th>
-              <td class="profile-content"><%= @users.id %></td>
-            </tr>
-            <tr>
-              <th class="profile-title">お名前</th>
-              <td class="profile-content"><%= @users.name %></th>
-            </tr>
-            <tr>
-              <th class="profile-title">生年月日</th>
-              <td class="profile-content"><%= @users.birth_year %>年<%= @users.birth_month %>月<%= @users.birth_day %>日</td>
-            </tr>
-            <tr>
-              <th class="profile-title">住所</th>
-              <td class="profile-content"><%= @users.address %></td>
-            </tr>
-            <tr>
-              <th class="profile-title">電話番号</th>
-              <td class="profile-content"><%= @users.telephone %></td>
-            </tr>
-            <tr>
-              <th class="profile-title">メールアドレス</th>
-              <td class="profile-content"><%= @users.email %></td>
-            </tr>
-            <tr>
-              <th class="profile-title">最終更新日</th>
-              <td class="profile-content"><%= @users.updated_at.to_i %></td>
-            </tr>
-          </tbody>
-        </table>
+  </div>
+  <div class="divided-line"></div>
+    <div class="profile-wrapper">
+      <div class="title-position">
+        <h1 class="profile-bigtitle">撮影者様情報</h1>
       </div>
+      <table>
+        <tbody>
+          <tr>
+            <th class="profile-title">お客様ID</th>
+            <td class="profile-content"><%= @users.id %></td>
+          </tr>
+          <tr>
+            <th class="profile-title">お名前</th>
+            <td class="profile-content"><%= @users.name %></th>
+          </tr>
+          <tr>
+            <th class="profile-title">生年月日</th>
+            <td class="profile-content"><%= @users.birth_year %>年<%= @users.birth_month %>月<%= @users.birth_day %>日</td>
+          </tr>
+          <tr>
+            <th class="profile-title">住所</th>
+            <td class="profile-content"><%= @users.address %></td>
+          </tr>
+          <tr>
+            <th class="profile-title">電話番号</th>
+            <td class="profile-content"><%= @users.telephone %></td>
+          </tr>
+          <tr>
+            <th class="profile-title">メールアドレス</th>
+            <td class="profile-content"><%= @users.email %></td>
+          </tr>
+          <tr>
+            <th class="profile-title">最終更新日</th>
+            <td class="profile-content"><%= @users.updated_at.to_i %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

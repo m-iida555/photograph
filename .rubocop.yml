@@ -41,3 +41,6 @@ Style/MutableConstant:
 
 Layout/LineLength:
   Max: 200
+
+Rails/HelperInstanceVariable:
+  Enabled: false #インスタンス変数をhelperで利用できる様に許可
