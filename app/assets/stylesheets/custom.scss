@@ -10,6 +10,8 @@
 
 // 全ページ共通
 body {
+  width: 100%;
+  height: auto;
   padding-top: 60px;
 }
 
@@ -70,23 +72,12 @@ p {
 
 // フッター
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea ;
-  color: #777 ;
-  small {
-    float: center;
-  }
-}
-
-.header-positon{
-  position: relative;
-}
-
-.body-position{
-  position: absolute;
-  top: 150px;
   width: 100%;
+  height: auto;
+  margin-top: auto;
+  padding-top: 5px;
+  border-top: 1px solid #7e6f6f ;
+  color: #777 ;
 }
 
 .header-wrapper {
@@ -95,9 +86,11 @@ footer {
   background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
 }
 
-.body-wrapper{
+.body-wrapper {
   width: 100%;
   height: auto;
+  margin-top: 150px;
+  margin-bottom: 150px
 }
 
 input, textarea, select, .uneditable-input {
@@ -181,6 +174,12 @@ table{
   font-color: #0000;
   font-size: 40px;
   margin-bottom: 22px;
+}
+
+.profile-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 tr{
