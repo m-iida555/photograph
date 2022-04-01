@@ -21,6 +21,11 @@ RSpec.feature "サインイン", type: :feature do
       expect(page).to have_content "パスワード"
     end
 
+    it "サインインにしたままにするボックスが表示されることを確認" do
+      expect(page).to have_content "ログイン状態を保持する"
+      expect(page).to have_css "input#session_remember_me"
+    end
+
     scenario "サインインボタンがある事を確認" do
       expect(page).to have_button "サインイン"
     end

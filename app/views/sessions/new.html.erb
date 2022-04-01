@@ -14,6 +14,12 @@
         <%= f.label 'パスワード' %>
         <%= f.password_field :password, class: 'form-control', id: 'user_password' %>
       </div>
+      <div class = 'form-group'>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span>ログイン状態を保持する</span>
+        <% end %>
+      </div>
       <%= f.submit 'サインイン', class: 'btn btn-primary' %>
     <% end %>
     <br>ユーザー登録されていない方は<%= link_to 'こちら', signup_path %><br>
