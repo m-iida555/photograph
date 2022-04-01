@@ -43,5 +43,11 @@ RSpec.describe User, type: :model do
       user = build(:user, password: nil)
       expect(user).not_to be_valid
     end
+
+    context "authenticated?メソッド" do
+      it "remember_digestが存在しない場合、エラーとなる事をテスト" do
+        expect(user.authenticated?('')).not_to eq true
+      end
+    end
   end
 end
