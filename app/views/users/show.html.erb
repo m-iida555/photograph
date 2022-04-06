@@ -27,7 +27,7 @@
           </tr>
           <tr>
             <th class="profile-title">生年月日</th>
-            <td class="profile-content"><%= @users.birth_year %>年<%= @users.birth_month %>月<%= @users.birth_day %>日</td>
+            <td class="profile-content"><%= @users.birth_date %></td>
           </tr>
           <tr>
             <th class="profile-title">住所</th>
@@ -44,9 +44,15 @@
           <tr>
             <th class="profile-title">最終更新日</th>
             <td class="profile-content"><%= @users.updated_at.to_i %></td>
-          </tr>
+          </tr>       
         </tbody>
       </table>
     </div>
+    <div class="account-edit">
+      <%= link_to "お客様情報の変更", edit_user_path(@users.id) %>
+    </div>
+    <div class="account-edit">
+    <%= link_to "アカウントの削除", "/users/#{@users.id}", method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </div>
   </div>
 </div>

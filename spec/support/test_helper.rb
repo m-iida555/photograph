@@ -26,3 +26,10 @@ def current_user
         end
     end
 end
+
+def signin_for_feature(user)
+    visit signin_path
+    fill_in "user_email", with: user.email
+    fill_in "user_password", with: user.password
+    click_button "サインイン"
+end

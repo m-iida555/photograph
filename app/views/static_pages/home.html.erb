@@ -1,3 +1,6 @@
 <% provide(:title,"TOP") %>
+<% flash.each do |message_type, message| %>
+    <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+<% end %>
 <h1>SCENES撮影会#home</h1>
 <p>Find me in app/views/static_pages/home.html.erb</p>
