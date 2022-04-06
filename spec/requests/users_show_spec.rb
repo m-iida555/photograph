@@ -4,6 +4,7 @@ RSpec.describe "プロフィール", type: :request do
   let(:user) { create(:user) }
 
   before do
+    signin_for_request(user)
     get user_path(user.id)
   end
 

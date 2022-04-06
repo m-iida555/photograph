@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-before_action :logged_in_user, only: [:index, :show, :edit, :update]
-before_action :correct_user, only: [:edit, update]
+before_action :sign_in_user, only: [:index, :show, :edit, :update, :destroy]
+before_action :correct_user, only: [:edit, :update]
 
   def index
   end
@@ -38,7 +38,15 @@ before_action :correct_user, only: [:edit, update]
     end
   end
 
+  def destroy
+    @users = User.find(params[:id])
+    @users.destroy
+    flash[:success] = "アカウントを削除しました。"
+    redirect_to root_path
+  end
+
   private
+
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
@@ -49,7 +57,7 @@ before_action :correct_user, only: [:edit, update]
 
   def correct_user
     @user = User.find(params[:id])
-    if !corrent_user?(@user)
+    if !current_user?(@user)
       flash[:danger] = "このページはアクセスできません。"
       redirect_to root_path
     end

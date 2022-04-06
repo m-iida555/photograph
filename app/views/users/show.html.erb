@@ -51,5 +51,8 @@
     <div class="account-edit">
       <%= link_to "お客様情報の変更", edit_user_path(@users.id) %>
     </div>
+    <div class="account-edit">
+    <%= link_to "アカウントの削除", "/users/#{@users.id}", method: :delete, data: { confirm: "本当に削除しますか？" } %>
+  </div>
   </div>
 </div>

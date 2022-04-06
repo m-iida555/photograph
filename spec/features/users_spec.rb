@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Users", type: :feature do
-  describe "ユーザー登録ページ" do
+  describe "新規登録ページ" do
     background do
       visit signup_path
     end
@@ -41,6 +41,7 @@ RSpec.feature "Users", type: :feature do
     let!(:user) { create(:user, name: "撮影者", email: "sample@sample.com", id: 1) }
 
     background do
+      signin_for_feature(user)
       visit user_path(1)
     end
 
@@ -63,6 +64,7 @@ RSpec.feature "Users", type: :feature do
     let!(:user) { create(:user, name: "撮影者", email: "sample@sample.com", id: 1) }
 
     background do
+      signin_for_feature(user)
       visit user_path(1)
       click_link "お客様情報の変更"
     end
@@ -96,6 +98,21 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content "ユーザー名を入力してください"
       expect(page).to have_content "メールアドレスを入力してください"
       expect(page).to have_content "電話番号は10文字以上で入力してください"
+    end
+  end
+
+  describe "お客様情報の削除" do
+    let!(:user) { create(:user, name: "撮影者", email: "sample@sample.com", id: 1) }
+
+    background do
+      signin_for_feature(user)
+      visit user_path(1)
+    end
+
+    scenario "削除ボタンが表示される" do
+      expect(page).to have_content "アカウントの削除"
+      click_link "アカウントの削除"
+      expect(page).to have_content "アカウントを削除しました。"
     end
   end
 end
