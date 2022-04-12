@@ -18,6 +18,7 @@ ja:
         birth_date: 生年月日
         address: 住所
         telephone: 電話番号
+        image: プロフィール画像
         create_at: 登録日時
         updated_at: 更新日時
   date:

@@ -11,7 +11,7 @@
 // 全ページ共通
 body {
   width: 100%;
-  height: auto;
+  height: 100%;
   padding-top: 60px;
 }
 
@@ -40,6 +40,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+
 }
 
 h2 {
@@ -60,6 +61,8 @@ p {
 .navbar ul{
   margin-top: 12px;
   margin-bottom: 12px;
+  list-style: none;
+  padding-left: 10px;
 }
  #logo  {
   float: left;
@@ -87,9 +90,9 @@ footer {
 }
 
 .body-wrapper {
-  width: 100%;
+  width: auto;
   height: auto;
-  margin-top: 150px;
+  margin-top: 90px;
   margin-bottom: 150px
 }
 
@@ -121,12 +124,13 @@ input {
 .background-image{
   width: 100%;
   height: 500px;
-  margin-bottom: 100px;
+  background-image: url("background.jpg");
+  z-index: -1;
 }
 
 .avatar-position{
   text-align: center;
-  padding-top: 200px;
+  padding-top: 135px;
 }
 
 .title-position{
@@ -134,10 +138,8 @@ input {
 }
 
 .profile-bigtitle{
-  padding: 30px;
+  padding: 17px;
   background: linear-gradient(-120deg, #E4A972, #9941D8) fixed;
-  border-radius: 20px;
-  width: 300px;
   margin: 0 auto;
   color: #fff;
   font-family:Arial, Helvetica, sans-serif;
@@ -148,11 +150,11 @@ input {
   height: auto;
 }
 
-table{
+table:not(.table-striped){
   width: auto;
   text-align: left;
-  margin-top: 250px;
-  margin-left: 100px;
+  margin-top: 50px;
+  margin-left: 250px;
 }
 
 .tbody{
@@ -163,17 +165,17 @@ table{
   display: inline-block;
   font-family: serif;
   font-color: #0000;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 10px;
 }
 
 .profile-content{
-  display: inline-block;
   font-family: serif;
   font-color: #0000;
-  font-size: 40px;
+  font-size: 27px;
   margin-bottom: 22px;
+  padding-left: 200px;
 }
 
 .profile-image{
@@ -220,15 +222,180 @@ table{
 .account-edit {
   width: 250px;
   height: 50px;
-  margin-top: 20px;
-  margin-left: 1000px;
-  padding: 5px;
+  margin-top: 50px;
+  margin-left: 220px;
+  padding: 25px;
   font-size: 25px;
   text-align: center;
 }
 
-.gravatar-edit .gravatar{
+.account-edit:last-child {
+  margin-top: 0px;
+}
+
+.edit-profile-image{
   border-radius: 50%;
   width: 50px;
   height: 50px;
+}
+
+.profile-image{
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.image-form-controll{
+  outline: none;
+}
+
+.image-setting{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.edit-user{
+  height: auto;
+}
+
+.form-group .image-setting{
+  height: 100px;
+  width: 100px;
+}
+
+.row{
+  margin-top: 155px;
+}
+
+.pulltab-form-control{
+  display: inline-block;
+    width: 100px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.birth-date-label{
+  display: block;
+}
+
+.image-form-control{
+  width: 250px;
+}
+
+.name-position{
+  padding-left: 20px;
+  font-size: 20px;
+  margin: 0 0 3px;
+}
+
+#open{
+  background-color: #dcdcdc;
+  margin-top: -15px;
+  width: 170px;
+  height: auto;
+}
+
+.user-icon-list {
+  margin-top: 7px;
+}
+
+$items: 4;
+$animation-time: 4s;
+$transition-time: .5s;
+$scale: 20%;
+
+$total-time: ($animation-time * $items);
+$scale-base-1: (1 + $scale / 100%);
+
+.slideshow {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  margin-top: -20px;
+}
+
+.slideshow-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: no-repeat 50% 50%;
+  background-size: cover;
+  animation-name: kenburns;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: $total-time;
+  opacity: 1;
+  transform: scale($scale-base-1);
+
+  @for $i from 1 through $items {
+    &:nth-child(#{$i}) {
+      animation-name: kenburns-#{$i};
+      z-index: ($items - $i);
+    }
+  }
+}
+
+@for $i from 1 through $items {
+  @keyframes kenburns-#{$i} {
+    $animation-time-percent: percentage($animation-time / $total-time);
+    $transition-time-percent: percentage($transition-time / $total-time);
+    
+    $t1: ($animation-time-percent * ($i - 1) - $transition-time-percent / 2);
+    $t2: ($animation-time-percent * ($i - 1) + $transition-time-percent / 2);
+    @if($t1 < 0%) { $t1: 0%; }
+    @if($t2 < 0%) { $t2: 0%; }
+
+    $t3: ($animation-time-percent * ($i) - $transition-time-percent / 2);
+    $t4: ($animation-time-percent * ($i) + $transition-time-percent / 2);
+    @if($t3 > 100%) { $t3: 100%; }
+    @if($t4 > 100%) { $t4: 100%; }
+
+    $t5: (100% - $transition-time-percent / 2);
+    $t6: (($t4 - $t1) * 100% / $t5);
+
+    #{$t1} { opacity: 1; transform: scale($scale-base-1); }
+    #{$t2} { opacity: 1; }
+    #{$t3} { opacity: 1; }
+    #{$t4} { opacity: 0; transform: scale(1); }
+    
+    @if($i != $items) {
+      100% { opacity: 0; transform: scale($scale-base-1); }
+    }
+    
+    @if($i == 1) {
+      $scale-plus: ($scale * (100% - $t5) / $t4);
+      $scale-plus-base-1: (1 + ($scale + $scale-plus) / 100%);
+    
+      #{$t5} { opacity: 0; transform: scale($scale-plus-base-1); }
+      100% { opacity: 1; }
+    }
+  }
+}
+
+.schedule-top{
+  margin-top: 600px;
+}
+
+.table-striped{
+  width: auto;
+  margin-left: 100px;
+}
+
+.calendar-heading {
+  margin-left: 100px;
+}
+
+.calendar-header .calendar-title{
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+  font-family: serif;
 }

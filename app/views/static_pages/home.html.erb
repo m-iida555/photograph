@@ -2,5 +2,28 @@
 <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
 <% end %>
-<h1>SCENES撮影会#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class = "body-wrapper">
+  <div class = "top-scroll">
+  　　<div class="slideshow">
+  　　<div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/nature/1600x1400')"></div>
+  　　<div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/buildings/1600x1400')"></div>
+  　　<div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/food/1600x1400')"></div>
+  　　<div class="slideshow-image" style="background-image: url('https://source.unsplash.com/category/technology/1600x1400')"></div>
+  </div>
+  <div class = "schedule-top">
+    <div class = "calendar-header">
+      <p class = "calendar-title">撮影会スケジュール</p>
+    </div>
+<br>
+<!-- ここから --!>
+<%= month_calendar events: @schedules do |date, schedules| %>
+  <%= date %>
+  <% schedules.each do |schedule| %>
+    <div>
+      <%= schedule.start_time.hour %>:<%= schedule.start_time.min %>
+      <%= schedule.name %>
+    </div>
+  <% end %>
+<% end %>
+  </div>
+</div>
