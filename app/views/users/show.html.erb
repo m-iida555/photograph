@@ -6,7 +6,12 @@
   <div class="background-image">
     <div class="background-position">
       <div class="avatar-position">
-        <%= gravatar_for @users %><br>
+        <% if @users.image? %>
+          <%= image_tag @users.image.url, class: "image-setting" %>
+        <% else %>
+          <%= image_tag "profile.jpg", :class=>"image-setting" %>
+        <% end %>
+        <br>
       </div>
     </div>
   </div>

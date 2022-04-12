@@ -9,12 +9,12 @@
 <!-- ユーザー名表示 -->
           <p class="name-position signin-name">
             <% if current_user %>
-              <%= current_user.name %>
+              <%= link_to current_user.name, user_path(current_user.id) %>
             <% end %>
 <!-- 画像表示 -->
             <div class="image-position">
               <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-                <a style="cursor:pointer;" class="menu-click">
+                <div style="cursor:pointer;" class="menu-click">
                   <% if current_user.image? %>
   　                <%= image_tag current_user.image.url, :class=>"profile-image", :alt=>"profile-image" %>
                   <% else %>
