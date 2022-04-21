@@ -21,6 +21,22 @@ ja:
         image: プロフィール画像
         create_at: 登録日時
         updated_at: 更新日時
+    attributes:
+      schedule:
+        name: 撮影会名
+        place: 会場
+        place_d: 会場
+        start_time: 開始日時
+        explain: 撮影会の詳細
+        place_image: 会場写真
+    attributes:
+      model:
+        girl_name: モデル名
+        model_image: メインイメージ
+        model_image_sub: サブイメージ
+        model_job: 職業
+        model_hobby: 趣味
+        model_comment: ひとこと
   date:
     abbr_day_names:
     - 日

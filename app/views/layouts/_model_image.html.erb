@@ -1,0 +1,17 @@
+<div class="model-image-layout">
+  <div class="model-image-main">
+  <% if @model.model_image %>
+    <%= image_tag @model.model_image.url, class: "main-model" %>
+    <% else %>
+    <%= image_tag 
+    <% end %>
+  </div>
+  <div class="model-image-sub">
+    <ul>
+    <% @model.model_image_sub.each do |model| %>
+      <li><%= image_tag model.url, class: "sub-model" %></li>
+      <% end %>
+    </ul>
+  </div>
+  </div>
+</div>
