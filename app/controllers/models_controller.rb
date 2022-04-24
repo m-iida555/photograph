@@ -12,7 +12,7 @@ class ModelsController < ApplicationController
     if @model.save
       redirect_to model_path(@model.id)
     else
-      redirect_to 'new'
+      redirect_to new_model_path
     end
   end
 

@@ -1,9 +1,10 @@
 <% provide(:title, "モデル登録画面") %>
 <div class = "new-model">
   <%= form_with model: @model, url: models_path, local: true do |f| %>
+    <%= render "layouts/error_message" %>  
     <div class = "model-image">
-    　　<%= f.label :model_image %>
-    　　<%= f.file_field :model_image, class: 'image-form-control', id: 'model-image-id' %>
+      <%= f.label :model_image %>
+    　<%= f.file_field :model_image, class: 'image-form-control', id: 'model-image-id' %>
   　</div>
     <div class = "model-image">
       <%= f.label :model_image_sub %>
