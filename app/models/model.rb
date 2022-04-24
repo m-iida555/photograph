@@ -5,4 +5,6 @@ class Model < ApplicationRecord
   has_many :users
   has_many :schedules
 
+  validates :girl_name, presence: true
+  validates :model_image, presence: true
 end

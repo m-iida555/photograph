@@ -434,3 +434,23 @@ $scale-base-1: (1 + $scale / 100%);
   width: 200px;
   height: auto;
 }
+
+.top-model-list {
+  text-align: center;
+  margin-top: 150px;
+  width: auto;
+  height: auto;
+}
+
+.top-model-link {
+  font-size: 40px;
+  color: #fff;
+  background: linear-gradient(-135deg, #E4A972, #9941D8) fixed;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.top-model-link:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
+  border-color: transparent;
+}

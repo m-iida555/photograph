@@ -1,0 +1,15 @@
+<div class = "model-list-wrapper">
+  <h2>モデル一覧</h2>
+  <div class = "model-list">
+    <% @models.each do |model| %>
+    <div class = "model-info">
+      <div class = "model-icon">
+        <%= image_tag model.model_image.url, class: "model-icon-detail" %>
+      </div>
+      <div class = "model-name">
+        <%= model.girl_name %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
