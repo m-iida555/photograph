@@ -1,0 +1,15 @@
+<div class = "schedule-models">
+  <div class = "schedule-model-title">
+    <h2>参加モデル一覧</h2>
+  </div>
+  <div class = "schedule-model-image">
+    <% @model.each do |model| %>
+      <table>
+        <tr>
+          <th><% model.model-image %></th>
+          <td><% model.model-name %></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>

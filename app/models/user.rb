@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :birth_day, :publish_date
   mount_uploader :image, AvatarUploader
+  has_many :user_schedules
+  has_many :schedules, through: :user_schedules
 
   before_save :downcase_email
   validates :name, presence: true, length: { maximum: 30 }

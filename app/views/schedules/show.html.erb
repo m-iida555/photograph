@@ -1,5 +1,9 @@
-<h1>Schedules#show</h1>
-<p>Find me in app/views/schedules/show.html.erb</p>
-<div class= "schedule-add">
-  <% 
+<% provide(:title, "スケジュール詳細") %>
+<div class = "body-wrapper">
+  <%= render 'layouts/schedule_content' %>
+<%
+=begin %>
+  <%= render 'layouts/schedule_model' %>
+<%
+=end %>
 </div>

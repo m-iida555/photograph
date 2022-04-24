@@ -1,0 +1,15 @@
+<div class="schedule-content">
+  <div class="schedule-title">
+    <%= @schedule.name %>
+  </div>
+  <div class="schedule-date-place">
+    <%= @schedule.place %>
+    <%= @schedule.start_time.month %>月<%= @schedule.start_time.day %>日
+  </div>
+  <div class="schedule-image">
+    <%= image_tag @schedule.place_image.url, class: "place-image" %>
+  </div>
+  <div class="schedule-explain">
+    <%= @schedule.explain %>
+  </div>
+</div>
