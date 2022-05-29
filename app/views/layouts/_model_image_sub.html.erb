@@ -1,0 +1,13 @@
+<div class = "model-image-layout">
+  <div class="model-image-sub">
+    <ul>
+      <% if @model.model_image_sub.present? %>
+        <% @model.model_image_sub.each do |model| %>
+          <li><%= image_tag model.url, class: "sub-model" %></li>
+        <% end %>
+      <% else %>
+        <li><%= image_tag 'no-image.png', class: "sub-model"%></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

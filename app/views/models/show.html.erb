@@ -1,5 +1,13 @@
 <% provide(:title, "モデル詳細") %>
-<div class = "body-wrapper">
-  <%= render 'layouts/model_image' %>
-  <%= render 'layouts/model_profile' %>
+<div class = "model-wrapper">
+  <%= render 'layouts/model_page_change' %>
+  <div class = "model-layout-position">
+    <%= render 'layouts/model_image' %>
+    <%= render 'layouts/model_image_sub' %>
+  </div>
+  <div class = "model-info-layout">
+      <%= render 'layouts/model_profile' %>
+  </div>
+  <div class = "clear" >
+  <%= link_to "編集", edit_model_path(@model.id), class: "edit-button" %>
 </div>
