@@ -1,15 +1,16 @@
 <div class="schedule-content">
+  <div class = "schedule-content-wrapper">
   <div class="schedule-title">
+    <%= @schedule.start_time.month %>月<%= @schedule.start_time.day %>日
     <%= @schedule.name %>
   </div>
-  <div class="schedule-date-place">
-    <%= @schedule.place %>
-    <%= @schedule.start_time.month %>月<%= @schedule.start_time.day %>日
+  <div class="schedule-date-place">    
   </div>
   <div class="schedule-image">
     <%= image_tag @schedule.place_image.url, class: "place-image" %>
   </div>
   <div class="schedule-explain">
     <%= @schedule.explain %>
+  </div>
   </div>
 </div>

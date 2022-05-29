@@ -1,13 +1,14 @@
+<% provide(:title,"モデル一覧") %>
 <div class = "model-list-wrapper">
-  <h2>モデル一覧</h2>
+  <h1 class="model-list-title">MODELS</h1>
   <div class = "model-list">
     <% @models.each do |model| %>
     <div class = "model-info">
       <div class = "model-icon">
-        <%= image_tag model.model_image.url, class: "model-icon-detail" %>
+        <%= link_to (image_tag model.model_image.url, class: "model-icon-detail"), model_path(model.id) %>
       </div>
-      <div class = "model-name">
-        <%= model.girl_name %>
+      <div class = "model-name-list">
+        <%= link_to model.girl_name, model_path(model.id) %>
       </div>
     </div>
     <% end %>

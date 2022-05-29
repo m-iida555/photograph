@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-#before_action :sign_in_user, only: [:index, :show, :edit, :update, :destroy]
 before_action :sign_in_user, only: [:home]
 before_action :correct_user, only: [:edit, :update]
 

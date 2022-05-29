@@ -1,9 +1,10 @@
 <% provide(:title, "モデル登録画面") %>
 <div class = "new-model">
   <%= form_with model: @model, url: models_path, local: true do |f| %>
+  <%= render 'shared/model_error_message' %> 
     <div class = "model-image">
-    　　<%= f.label :model_image %>
-    　　<%= f.file_field :model_image, class: 'image-form-control', id: 'model-image-id' %>
+      <%= f.label :model_image %><p class="hissu">必須</p>
+      <%= f.file_field :model_image, class: 'image-form-control', id: 'model-image-id' %>
   　</div>
     <div class = "model-image">
       <%= f.label :model_image_sub %>
@@ -11,7 +12,7 @@
     </div>
     <p>*Macの場合は、commandを押しながら、アップしたい複数の画像ファイルを選択してください。</p>
     <div class = "form-group">
-      <%= f.label :girl_name %>
+      <%= f.label :girl_name %><p class="hissu">必須</p>
       <%= f.text_field :girl_name, class: 'form-control', id: 'girl-name-id' %>
     </div>
   　<div class = "form-group">

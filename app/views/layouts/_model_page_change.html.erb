@@ -1,0 +1,8 @@
+<div class = "model-change-wrapper">
+    <div class = "model-change-position model-change-front">
+      <%= link_to "<< 前のモデル", model_path(@model.id-1) %>
+    </div>
+    <div class = "model-change-position model-change-back">
+      <%= link_to "次のモデル >>", model_path(@model.id+1) %>
+    </div>
+</div>

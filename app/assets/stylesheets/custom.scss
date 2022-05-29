@@ -97,7 +97,6 @@ footer {
   width: auto;
   height: auto;
   margin-top: 90px;
-  margin-bottom: 150px
 }
 
 input, textarea, select, .uneditable-input {
@@ -183,7 +182,7 @@ table:not(.table-striped){
 }
 
 .profile-image{
-  width: 50px;
+  width: 90px;
   height: 50px;
   border-radius: 50%;
 }
@@ -268,7 +267,7 @@ table:not(.table-striped){
 }
 
 .row{
-  margin-top: 155px;
+  margin-top: 1%;
 }
 
 .pulltab-form-control{
@@ -385,7 +384,7 @@ $scale-base-1: (1 + $scale / 100%);
 }
 
 .schedule-top{
-  margin-top: 600px;
+  padding-top: 35%;
 }
 
 .simple-calendar{
@@ -402,11 +401,15 @@ $scale-base-1: (1 + $scale / 100%);
   margin-left: 100px;
 }
 
-.calendar-header .calendar-title{
-  font-size: 60px;
+.calendar-title{
+  font-size: 37px;
   font-weight: 900;
   text-align: center;
   font-family: serif;
+}
+
+.calendar-time{
+  font-size: 20%;
 }
 
 .model-image{
@@ -419,19 +422,38 @@ $scale-base-1: (1 + $scale / 100%);
   margin-top: -40px;
 }
 
+.model-image-layout {
+  height: 70%;
+  margin-top: -15%;
+}
+
+.model-image-sub{
+  margin-top: 18%;
+}
+
+.model-image-layout:last-child {
+  height: auto;
+}
+
 #model-image-sub-id{
   width: auto;
   height: auto;
 }
 
-.model-image-sub ul li{
-  display: inline-block;
+.model-image-sub ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: auto;
   height: auto;
 }
 
+.model-image-sub ul li {
+  margin-left: 50px;
+}
+
 .sub-model{
-  width: 200px;
+  width: 125px;
   height: auto;
 }
 
@@ -453,4 +475,226 @@ $scale-base-1: (1 + $scale / 100%);
 .top-model-link:hover {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
   border-color: transparent;
+}
+
+.error-model{
+  width: auto;
+  height: auto;
+}
+
+.hissu{
+  width: 30px;
+  height: 20px;
+  background: #ff0000;
+  color: #fff;
+  display: inline-block;
+  font-size: 5px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 6px;
+  margin-left: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.model-list-wrapper{
+  width: auto;
+  height: auto;
+}
+
+.model-list {
+  width: 90%;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.model-info {
+  width: 25%;
+  height: 350px;
+}
+
+.model-icon{
+  width: 100%;
+  height: auto;
+}
+
+.model-icon-detail{
+  width: 90%;
+  height: 300px;
+  padding: 0 5px;
+}
+
+.model-name-list{
+  text-align: center;
+  font-size: 35px;
+  color: #666666;
+  font-family: 'Cormorant', serif;
+}
+
+.model-list-title{
+  padding-top: 60px;
+  color: #666666;
+  font-family: 'Cormorant', serif;
+}
+
+.model-change-wrapper {
+  width: auto;
+  height: auto;
+  padding-top: 30px;
+  display: flex;
+}
+
+.model-change-front {
+  font-family: 'Cormorant', serif;
+  font-size: 20px;
+  margin-left: 38%;
+}
+
+.model-change-back {
+  font-family: 'Cormorant', serif;
+  font-size: 20px;
+  margin-left: 5%;
+  margin-right: 30%;
+}
+
+.model-change-positon {
+  padding-top: 30px;
+}
+
+.main-model {
+  width: 80%;
+}
+
+.model-wrapper {
+  width: auto;
+  height: auto;
+  margin: 10px 5%;
+  background-image: url("../images/ポートフォリオ背景.jpg"); 
+  background-repeat: no-repeat;
+	background-size: 40% auto;
+  font-family: 'Cormorant', serif;
+}
+
+
+.model-layout-position {
+  display: inline-block;
+  vertical-align: center;
+  width: 55%;
+  height: auto;
+  text-align: center;
+  float: left;
+}
+
+.model-layout-position:last-child {
+  width: 40%;
+}
+
+.model-info-layout {
+  display: inline-block;
+  vertical-align: center;
+  width: 35%;
+  height: auto;
+  text-align: center;
+  float: left;
+}
+
+.model-content {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.model-image-main {
+  margin-top: 150px;
+  width: 90%;
+}
+
+.model-content table {
+  height: auto;
+  border-collapse: separate;
+  border-spacing: 40px;
+  font-size: 17px;
+  margin-left: 0;
+}
+
+.model-content table tr th, .model-table tr td {
+  display: inline-block;
+}
+
+.model-content table tr:first-child {
+  margin-bottom: 40px; 
+}
+
+.model-content table tr td:first-child {
+  font-size: 90px;
+}
+
+.model-content table tr th {
+  border-bottom: solid 3px #e6e6fa;
+  width: auto;
+  text-align: center;
+}
+
+.concept-wrapper{
+  padding: 9% 25%;
+}
+
+.concept-text{
+  margin-bottom: 0;
+  font-family: serif;
+}
+
+.concept{
+  margin-top: 0;
+  margin-bottom: 110px;
+  font-family: serif;
+}
+
+.about-line{
+  border: 1px solid #f5f5f5
+}
+
+.schedule-list-wrapper{
+  width: auto;
+  height: auto;
+}
+
+.schedule-list-title{
+  padding-top: 60px;
+  color: #666666;
+  font-family: 'Cormorant', serif;
+}
+
+.schedule-wrapper{
+  width: auto;
+  height: auto;
+}
+
+.schedule-title{
+  display: inline-block;
+  font-size: 280%;
+  font-family: serif;
+  padding-top: 9%;
+  margin-bottom: 5%;
+}
+
+.schedule-content{
+  display: block;
+  text-align: center;
+}
+
+.schedule-content-wrapper{
+  margin: 0 10%;
+}
+
+.schedule-title::after{
+  content: "";
+  display: block;
+  background-color:#f5f5f5;
+  height: 2px;
+  width: 100%;
 }
