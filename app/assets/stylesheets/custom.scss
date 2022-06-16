@@ -523,8 +523,8 @@ $scale-base-1: (1 + $scale / 100%);
 }
 
 .model-icon-detail{
-  width: 90%;
-  height: 300px;
+  width: 70%;
+  height: auto;
   padding: 0 5px;
 }
 
@@ -630,7 +630,7 @@ $scale-base-1: (1 + $scale / 100%);
 }
 
 .model-content table tr td:first-child {
-  font-size: 90px;
+  font-size: 60px;
 }
 
 .model-content table tr th {
@@ -687,14 +687,69 @@ $scale-base-1: (1 + $scale / 100%);
   text-align: center;
 }
 
-.schedule-content-wrapper{
+.schedule-content-wrapper {
   margin: 0 10%;
 }
 
-.schedule-title::after{
+.schedule-title::after {
   content: "";
   display: block;
   background-color:#f5f5f5;
   height: 2px;
   width: 100%;
+}
+
+.new-schedule {
+  margin: 5% 15%;
+}
+
+.place-image {
+  width: 60%;
+  height: auto;
+}
+
+.schedule-model-wrapper {
+  margin: 5% 10%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.schedule-model-image {
+  width: 90%;
+  height: auto;
+}
+
+.schedule-model-icon{
+  width: 95%;
+  height: auto;
+}
+
+.schedule-model-name{
+  font-size: 2em;
+  font-family: serif;
+}
+
+.schedule-model-position {
+  display: block;
+  width: 20%;
+  margin-right: 5%;
+  text-align: center;
+}
+
+.schedule-model-title {
+  border-bottom: 2px solid #f5f5f5;
+  margin: 0 15%;
+  padding-bottom: 2%;
+}
+
+.schedule-model-list-title {
+  margin-top: 20%;
+  margin-bottom: 0;
+}
+
+.schedule-time-wrapper {
+  display: flex;
+  width: 37%;
 }

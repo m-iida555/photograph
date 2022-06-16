@@ -10,14 +10,22 @@
       <%= f.text_field :name, class: 'form-control', id: 'schedule-id' %>
     </div>
     <%= f.select :place, [["エリア選択", "エリア選択"], ["自由が丘エリア", "自由が丘エリア"], ["湘南エリア", "湘南エリア"], ["汐留エリア", "汐留エリア"], ["赤坂エリア", "赤坂エリア"]] %>
-  　<div class = "form-group">
-  　　<%= f.label :start_time %>
-  　　<%= f.date_field :start_time, class: 'form-control', id: 'schedule-date-id' %>
+
+    <div class = "form-group">
+      <%= f.label :start_time %>
+      <div class = "schedule-time-wrapper" >
+        <%= f.datetime_select :start_time, class: 'form-control', class: 'schedule-time' %>
+      </div>
 　　</div>
     <div class = "form-group">
       <%= f.label :explain %>
       <%= f.text_area :explain, class: 'formarea-control', id: 'explain-id' %>
     </div>
-    <%= f.submit "スケジュール情報更新", class: "btn btn-primary" %>
-  <% end %>
+    <%= f.collection_select :model_ids, Model.all, :id, :girl_name, { include_blank: "選択してください", multiple: true } %>
+    <%= f.collection_select :model_ids, Model.all, :id, :girl_name, { include_blank: "選択してください", multiple: true } %>
+    <%= f.collection_select :model_ids, Model.all, :id, :girl_name, { include_blank: "選択してください", multiple: true } %>
+    <%= f.collection_select :model_ids, Model.all, :id, :girl_name, { include_blank: "選択してください", multiple: true } %>
+    <%= f.collection_select :model_ids, Model.all, :id, :girl_name, { include_blank: "選択してください", multiple: true } %>
+    <%= f.submit "スケジュール作成", class: "btn btn-primary" %>
+    <% end %>
 </div>

@@ -25,8 +25,8 @@ class ModelsController < ApplicationController
   end
 
   def update
-    @model = Model.update(model_edit)
-    if @model = model.save
+    @model = Model.find(params[:id])
+    if @model.update(model_edit)
       redirect_to model_path(@model.id)
     else
       redirect_to edit_model_path
@@ -36,10 +36,10 @@ class ModelsController < ApplicationController
   private
 
   def model_create
-    params.require(:model).permit(:girl_name, :model_image, { model_image_sub: [] }, :model_job, :model_hobby, :model_comment)
+    params.require(:model).permit(:girl_name, :model_image, { model_image_sub: [] }, :model_job, :model_hobby, :model_comment, { schedule_id: [] })
   end
 
   def model_edit
-    params.require(:model).permit(:girl_name, :model_image, { model_image_sub: [] }, :model_job, :model_hobby, :model_comment)
+    params.require(:model).permit(:girl_name, :model_image, { model_image_sub: [] }, :model_job, :model_hobby, :model_comment, { schedule_id: [] })
   end
 end

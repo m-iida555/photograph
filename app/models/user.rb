@@ -3,6 +3,7 @@ class User < ApplicationRecord
   mount_uploader :image, AvatarUploader
   has_many :user_schedules
   has_many :schedules, through: :user_schedules
+  accepts_nested_attributes_for :user_schedules, allow_destroy: true
 
   before_save :downcase_email
   validates :name, presence: true, length: { maximum: 30 }

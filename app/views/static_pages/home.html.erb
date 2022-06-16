@@ -20,7 +20,7 @@
       <%= date.day %>
       <% schedules.each do |schedule| %>
         <div>
-          <%= schedule.start_time.hour %>:<%= schedule.start_time.min %>
+          <%= schedule.start_time.time %>:<%= schedule.start_time.min %>
           <%= schedule.name %>
         </div>
       <% end %>

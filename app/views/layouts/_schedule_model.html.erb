@@ -1,15 +1,21 @@
 <div class = "schedule-models">
   <div class = "schedule-model-title">
-    <h2>参加モデル一覧</h2>
+    <h2 class = "schedule-model-list-title">参加モデル一覧</h2>
   </div>
-  <div class = "schedule-model-image">
-    <% @model.each do |model| %>
-      <table>
-        <tr>
-          <th><% model.model-image %></th>
-          <td><% model.model-name %></td>
-        </tr>
-      </table>
+  <div class = "schedule-model-wrapper">
+    <% @schedule.models.each  do |model| %>
+      <div class = "schedule-model-position">
+        <div class = "schedule-model-image">
+          <% if model.model_image.blank? %>
+            <%= image_tag"assets/images/no-image.png", class: "schedule-model-icon" %>
+          <% else %>    
+            <%= image_tag model.model_image.url, class: "schedule-model-icon" %>
+          <% end %>
+        </div>
+        <div class = "schedule-model-name">
+          <%= model.girl_name %>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_19_053758) do
+ActiveRecord::Schema.define(version: 2022_05_29_110444) do
 
   create_table "models", force: :cascade do |t|
     t.text "model_image"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2022_04_19_053758) do
   end
 
   create_table "schedule_models", force: :cascade do |t|
-    t.integer "schedule_id", null: false
-    t.integer "model_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "schedule_id"
+    t.integer "model_id"
     t.index ["model_id"], name: "index_schedule_models_on_model_id"
     t.index ["schedule_id"], name: "index_schedule_models_on_schedule_id"
   end

@@ -27,6 +27,7 @@
       <%= f.label :model_comment %>
       <%= f.text_area :model_comment, class: 'formarea-control', id: 'model-comment-id' %>
     </div>
+    <%= f.hidden_field :model_id, value: @model.id %>
     <%= f.submit "モデル情報更新", class: "btn btn-primary" %>
   <% end %>
 </div>
