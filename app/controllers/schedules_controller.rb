@@ -5,12 +5,11 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = Schedule.new
-    @schedule.schedule_models.build
   end
 
   def create
     @schedule = Schedule.create(schedule_create)
-    binding.pry
+    @model = @schedule.models.build(model_create)
     if @schedule.save
       redirect_to schedule_path(@schedule.id)
     else
@@ -20,14 +19,7 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
-    #@model_image = @schedule.models.where(:model_id).where.not(image: nil)
-    #@schedules = Model.find_by(params[:id])
-    #@schedules = @schedule.models << Model.where(id: model_id)
-    #@schedules = @schedule.models.build
-    #@model = Model.where(params[:schedule_id])
-    #@schedule_model = Schedule_model.find(params[:id])
-    #@model = @schedule.models
-
+    @model = @schedule.models.where(id: :schedule_id)
   end
 
   def edit
@@ -43,12 +35,23 @@ class SchedulesController < ApplicationController
       redirect_to 'edit'
     end
   end
+
+  def destroy
+    @destroy = Schedule.find(params[:id])
+    if @destroy.destroy
+      redirect_to root_path
+    end
+  end
 end
 
 private
 
   def schedule_create
-    params.require(:schedule).permit(:name, :start_time, :place_image, :explain, :place, model_ids: [])
+    params.require(:schedule).permit(:name, :start_time, :place_image, :explain, :place, :girl_name, model_ids: [])
+  end
+
+  def model_create
+    params.require(:model).permit(:schedule_id)
   end
 
   def plan_create

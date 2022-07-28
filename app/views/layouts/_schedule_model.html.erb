@@ -3,7 +3,7 @@
     <h2 class = "schedule-model-list-title">参加モデル一覧</h2>
   </div>
   <div class = "schedule-model-wrapper">
-    <% @schedule.models.each  do |model| %>
+    <% @model.each  do |model| %>
       <div class = "schedule-model-position">
         <div class = "schedule-model-image">
           <% if model.model_image.blank? %>
